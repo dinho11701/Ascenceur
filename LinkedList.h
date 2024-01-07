@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 struct Node{
    
    int value;
@@ -15,6 +18,25 @@ class LinkedList{
    
    
    public:
-      LinkedList() : {}
+      LinkedList() : head(nullptr) {}
+      
+      ~LinkedList(){
+      
+         Node* current = head;
+         
+         while(current != nullptr){
+         
+            Node* next = current->next;
+            delete current;
+            current = next;
+         
+         }
+         head = nullptr;
+      
+      }
+      
+      void add(int value);
+      
+      void afficher();
 
 };
