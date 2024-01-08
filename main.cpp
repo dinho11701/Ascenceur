@@ -12,6 +12,21 @@ int main(){
    
    liste.afficher();
    
+   cout << "La tete est :"<< liste.laTete() << endl;
+   
+   liste.recupererLesDerniers();
+   
+   cout << "Les derniers sont :"<< endl;
+   
+   vector<int>& derniers = liste.getLesDerniers();
+   
+   for(int val : derniers){
+   
+      cout << val << endl;
+   
+   }
+   
+   
    
    return 0;
 

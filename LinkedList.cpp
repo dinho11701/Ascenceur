@@ -34,3 +34,37 @@ void LinkedList::afficher(){
    cout << endl;
 
 }
+
+
+int LinkedList::laTete(){
+
+   return (head->value);
+}
+
+
+void LinkedList::recupererLesDerniers(){
+
+   //on vide pour stock de new valeurs
+   lesDerniers.clear();
+
+   Node* avantDernier = head;
+   Node* dernier = head->next;
+   
+   while(dernier->next != nullptr){
+      
+      avantDernier = avantDernier->next;
+      dernier = dernier->next;
+      
+   }
+   
+   lesDerniers.push_back(avantDernier->value);
+   lesDerniers.push_back(dernier->value);
+
+}
+
+vector<int>& LinkedList::getLesDerniers(){
+   return lesDerniers;
+}
+
+
+

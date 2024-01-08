@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+#include <vector>
+
 struct Node{
    
    int value;
@@ -15,6 +17,7 @@ class LinkedList{
 
    private:
       Node* head;
+      vector<int> lesDerniers;
    
    
    public:
@@ -38,5 +41,13 @@ class LinkedList{
       void add(int value);
       
       void afficher();
+      
+      int laTete();
+      
+      void recupererLesDerniers();
+      
+      vector<int>& getLesDerniers();
+      
+      
 
 };

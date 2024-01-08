@@ -1,6 +1,4 @@
-#include<iostream>
-using namespace std;
-
+#include "LinkedList.h"
 
 
 class Ascenceur{
@@ -8,22 +6,24 @@ class Ascenceur{
    private:
       int etageDepart;
       int etageFinal;
-      int deplacement;
       int etageMaximal = 10;
+      LinkedList listeEtage;
       
    public:
       //cest letage que la personne que va appuyer qui compte
+      //au départ, l'étage initial est 0
+      //cet etage sera ajouté à la liste
       Ascenceur(int nouvelEtage) : etageFinal(nouvelEtage) {
-      
-         //car on veut que quand on appelle le constructeur
-         //l'éetage depart soit letage précédemment appuyé par l'user
-         //on veut as revenir à 0 
-         etageDepart = etageFinal;
+         listeEtage.add(nouvelEtage);
       }
       
       void afficherEtageActuel();
       
       int deplacement();
+      
+      //il doit être de 0
+      bool verifierEtageInitial();
+      
    
    
    
